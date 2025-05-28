@@ -67,17 +67,19 @@ public class catControl : MonoBehaviour
         // Move 
         if (Input.GetKey(KeyCode.W))
         {
+            //animal.transform.rotation = Quaternion.Euler(0, 270f, 0);
             animal.transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
             animator.Play("Walk");
         }
         else if (Input.GetKey(KeyCode.S))
         {
+            //animal.transform.rotation = Quaternion.Euler(0, 90f, 0);
             animal.transform.Translate(Vector3.back * moveSpeed * Time.deltaTime);
             animator.Play("Walk");
         }
         else
         {
-            animator.Play("Sit");
+            animator.Play("Idle_A");
         }
         // Turn 
         if (Input.GetKey(KeyCode.A))
