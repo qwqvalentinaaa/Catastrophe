@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 7735594939444646469}
   m_Layer: 0
   m_Name: toy_002
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -273,5 +273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bumpSound: {fileID: 8300000, guid: 4f1748cb7f3d8b44f812eb6015bc2581, type: 3}
   breakSound: {fileID: 8300000, guid: 828c29fcf71000140bd986691b8160e5, type: 3}
-  dollarValue: 50
+  dollarValue: 28
   breakVelocity: 2
+  pos: {x: 0, y: 0, z: 0}
+  rot: {x: 0, y: 0, z: 0, w: 0}

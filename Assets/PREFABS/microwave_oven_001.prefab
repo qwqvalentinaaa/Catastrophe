@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2862390267217463110}
   m_Layer: 0
   m_Name: microwave_oven_001
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -249,5 +249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bumpSound: {fileID: 0}
   breakSound: {fileID: 0}
-  dollarValue: 50
+  dollarValue: 57
   breakVelocity: 2
+  pos: {x: 0, y: 0, z: 0}
+  rot: {x: 0, y: 0, z: 0, w: 0}

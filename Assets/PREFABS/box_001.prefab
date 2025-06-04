@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: box_001
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c6ee65a17262c4b4595ed6f80b6a2a65, type: 3}
+      propertyPath: m_TagString
+      value: Object
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -245,5 +249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bumpSound: {fileID: 8300000, guid: ba41e0cdb5f660b4a94fb06a26be5cff, type: 3}
   breakSound: {fileID: 8300000, guid: 828c29fcf71000140bd986691b8160e5, type: 3}
-  dollarValue: 50
+  dollarValue: 12
   breakVelocity: 2
+  pos: {x: 0, y: 0, z: 0}
+  rot: {x: 0, y: 0, z: 0, w: 0}

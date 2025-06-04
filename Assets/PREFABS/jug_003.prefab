@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: jug_003
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7b69bf86b17c3034498e88c8096cdf3a, type: 3}
+      propertyPath: m_TagString
+      value: Object
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -246,5 +250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bumpSound: {fileID: 8300000, guid: 6b8bfec316528504bbe8afa83a7a2482, type: 3}
   breakSound: {fileID: 8300000, guid: 8947fdced5c036d438f94b593b8f8fcf, type: 3}
-  dollarValue: 50
+  dollarValue: 140
   breakVelocity: 2
+  pos: {x: 0, y: 0, z: 0}
+  rot: {x: 0, y: 0, z: 0, w: 0}

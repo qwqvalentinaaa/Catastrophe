@@ -76,6 +76,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: camera_001
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dd07248fa5962df43854a0f731b6b845, type: 3}
+      propertyPath: m_TagString
+      value: Object
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -258,5 +262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bumpSound: {fileID: 8300000, guid: 566a6cee890cdfc4c886faee4ac92e7d, type: 3}
   breakSound: {fileID: 8300000, guid: c33924fc2b8e3ce4ca26c1c463a094ea, type: 3}
-  dollarValue: 50
+  dollarValue: 400
   breakVelocity: 2
+  pos: {x: 0, y: 0, z: 0}
+  rot: {x: 0, y: 0, z: 0, w: 0}

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4010363527461285261}
   m_Layer: 0
   m_Name: BookSmall (1)
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -249,5 +249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bumpSound: {fileID: 8300000, guid: c76b482cec7fdbe48b163bd2ed1b23d4, type: 3}
   breakSound: {fileID: 8300000, guid: 9b3147ba997937f478ef91acd67a4bc6, type: 3}
-  dollarValue: 50
-  breakVelocity: 2
+  dollarValue: 13
+  breakVelocity: 2.5
+  pos: {x: 0, y: 0, z: 0}
+  rot: {x: 0, y: 0, z: 0, w: 0}
