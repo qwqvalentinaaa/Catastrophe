@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3458028250199935396}
   m_Layer: 0
   m_Name: Mug
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -228,8 +228,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bumpSound: {fileID: 8300000, guid: 9a5ded8ae43c0a34f85b2d26db97d33a, type: 3}
   breakSound: {fileID: 8300000, guid: ed2c6f1d0212e5a41b450d270542be4b, type: 3}
-  dollarValue: 50
-  breakVelocity: 0.91
+  dollarValue: 5
+  breakVelocity: 1.3
+  pos: {x: 0, y: 0, z: 0}
+  rot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!64 &3458028250199935396
 MeshCollider:
   m_ObjectHideFlags: 0

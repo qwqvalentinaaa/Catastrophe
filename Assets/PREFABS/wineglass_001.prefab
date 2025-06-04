@@ -76,6 +76,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wineglass_001
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a85c04d0f7dd0a14e988a543bd46a93d, type: 3}
+      propertyPath: m_TagString
+      value: Object
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -258,5 +262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bumpSound: {fileID: 8300000, guid: e61b5a417e7bf2a45a4ef95d6961f6a7, type: 3}
   breakSound: {fileID: 8300000, guid: 912b853bcdeb2324f990b0e696812b14, type: 3}
-  dollarValue: 50
+  dollarValue: 4
   breakVelocity: 0.91
+  pos: {x: 0, y: 0, z: 0}
+  rot: {x: 0, y: 0, z: 0, w: 0}

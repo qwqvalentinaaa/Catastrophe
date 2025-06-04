@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: flower_001
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 649646106a38e1346b231d5f5d64467f, type: 3}
+      propertyPath: m_TagString
+      value: Object
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -246,5 +250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bumpSound: {fileID: 8300000, guid: 4f1748cb7f3d8b44f812eb6015bc2581, type: 3}
   breakSound: {fileID: 8300000, guid: 8947fdced5c036d438f94b593b8f8fcf, type: 3}
-  dollarValue: 50
+  dollarValue: 25
   breakVelocity: 2
+  pos: {x: 0, y: 0, z: 0}
+  rot: {x: 0, y: 0, z: 0, w: 0}

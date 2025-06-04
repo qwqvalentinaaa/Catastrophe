@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UIElements;
@@ -30,6 +31,7 @@ public class catControl : MonoBehaviour
         animator = animal.GetComponent<Animator>();
         rb = animal.GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
+
     }
 
     // Swipe Vars
@@ -37,7 +39,7 @@ public class catControl : MonoBehaviour
     public float capsuleRadius = 10f;      // The "thickness" of the swipe area
     [Range(0f, 5f)]
     public float capsuleLength = 20f;      // How far in front of the cat the swipe reaches
-    [Range(0f, 5f)]
+    [Range(0f, 0.07f)]
     public float height = 0f;
     [Range(0f, 5f)]
     public float forward = .1f;
@@ -46,18 +48,16 @@ public class catControl : MonoBehaviour
 
     // Swipe takes a swipe at any object in front of the cat sending it flying!
     // Spawns a sphere hitbox anything within the hitbox is flung.
-    void Swipe()
+    void Shove()
     {
-        Debug.Log("swiping");
         // If you have a swipeOrigin (e.g., an empty GameObject at the cat's chest), use it
         Vector3 start = transform.position + transform.up * height + transform.forward * forward;
         Vector3 end = start + transform.forward * capsuleLength;
 
         Collider[] hits = Physics.OverlapSphere(start, capsuleRadius, ~0);
-        Debug.Log(hits.Length);
         foreach (Collider hit in hits)
         {
-            Debug.Log(hit.gameObject.name);
+            //Debug.Log(hit.gameObject.name);
             // Ignore self
             if (hit.attachedRigidbody != null && hit.gameObject != gameObject)
             {
@@ -68,15 +68,37 @@ public class catControl : MonoBehaviour
         }
     }
 
-    // Draws hitbox of Swipe. Uncomment to use.
-    //void OnDrawGizmos()
-    //{
-    //    Vector3 start = transform.position + transform.up * height + transform.forward * forward;
-    //    Gizmos.color = Color.cyan;
-    //    Gizmos.DrawWireSphere(start, capsuleRadius);
-    //}
+    void Nudge()
+    {
+        // If you have a swipeOrigin (e.g., an empty GameObject at the cat's chest), use it
+        Vector3 start = transform.position + transform.up * height + transform.forward * forward;
+        Vector3 end = start + transform.forward * capsuleLength;
 
-    
+        Collider[] hits = Physics.OverlapSphere(start, capsuleRadius, ~0);
+        foreach (Collider hit in hits)
+        {
+            //Debug.Log(hit.gameObject.name);
+            // Ignore self
+            if (hit.attachedRigidbody != null && hit.gameObject != gameObject)
+            {
+                SoundScript objScript = hit.gameObject.GetComponent<SoundScript>();
+                if (objScript != null)
+                {
+                    objScript.PlayNudge();
+                }
+                Vector3 dir = (hit.transform.position - transform.position).normalized;
+                hit.attachedRigidbody.AddForce(dir * .93f, ForceMode.Impulse);
+            }
+        }
+    }
+
+    // Draws hitbox of Swipe. Uncomment to use.
+    void OnDrawGizmos()
+    {
+        Vector3 start = transform.position + transform.up * height + transform.forward * forward;
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(start, capsuleRadius);
+    }
 
     // Checks for collision with fish (eat the fish yum)
     private void OnCollisionEnter(Collision collision)
@@ -87,6 +109,7 @@ public class catControl : MonoBehaviour
             audioSource.clip = eatSound;
             audioSource.Play();
             Destroy(collision.gameObject);
+            
         }
 
     }
@@ -103,7 +126,7 @@ public class catControl : MonoBehaviour
         {
             animator.Play("Attack");
             animateTimer = animateDuration;
-            Swipe();
+            Nudge();
             return;
         }
         // heavy knock
@@ -111,6 +134,7 @@ public class catControl : MonoBehaviour
         {
             animator.Play("Hit");
             animateTimer = animateDuration;
+            Shove();
             return;
         }
         // jump
@@ -158,4 +182,6 @@ public class catControl : MonoBehaviour
             animal.transform.Rotate(Vector3.up, turnSpeed * Time.deltaTime);
         }
     }
+
+    
 }
