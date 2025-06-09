@@ -137,51 +137,51 @@ public class catControl : MonoBehaviour
             Shove();
             return;
         }
-        // jump
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            animator.Play("Jump");
-            rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
-            Vector3 jumpDirection;
-            if (Input.GetKey(KeyCode.W))
-            {
-                jumpDirection = animal.transform.forward * jumpForwardForce + Vector3.up * jumpForce;
-            }
-            else
-            {
-                jumpDirection = Vector3.up * jumpForce;
-            }
-            rb.AddForce(jumpDirection, ForceMode.Impulse);
-            animateTimer = animateDuration;
-            return;
-        }
+
         // Move 
+        // Move in 8 directions (WASD - world axes)
+        // Get the direction from key input
+        Vector3 moveDir = Vector3.zero;
+
         if (Input.GetKey(KeyCode.W))
+            moveDir += Vector3.left;
+        if (Input.GetKey(KeyCode.S))
+            moveDir += Vector3.right;
+        if (Input.GetKey(KeyCode.A))
+            moveDir += Vector3.back;
+        if (Input.GetKey(KeyCode.D))
+            moveDir += Vector3.forward;
+
+        // If any direction key is pressed
+        if (moveDir != Vector3.zero)
         {
-            //animal.transform.rotation = Quaternion.Euler(0, 270f, 0);
-            animal.transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
-            animator.Play("Walk");
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            //animal.transform.rotation = Quaternion.Euler(0, 90f, 0);
-            animal.transform.Translate(Vector3.back * moveSpeed * Time.deltaTime);
+            moveDir.Normalize();
+            animal.transform.position += moveDir * moveSpeed * Time.deltaTime;
+            // Face the direction of movement
+            animal.transform.rotation = Quaternion.LookRotation(moveDir, Vector3.up);
             animator.Play("Walk");
         }
         else
         {
             animator.Play("Idle_A");
         }
-        // Turn 
-        if (Input.GetKey(KeyCode.A))
+        // jump
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            animal.transform.Rotate(Vector3.up, -turnSpeed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.D))
+            animator.speed = 0.5f;
+            animator.Play("Jump");
+            rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
+            Vector3 jumpDirection;
+            jumpDirection = moveDir * jumpForwardForce + Vector3.up * jumpForce;
+            rb.AddForce(jumpDirection, ForceMode.Impulse);
+            animateTimer = 0.08f;
+            return;
+        } else
         {
-            animal.transform.Rotate(Vector3.up, turnSpeed * Time.deltaTime);
+            animator.speed = 1f;
         }
+
     }
 
-    
+
 }
