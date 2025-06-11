@@ -21,6 +21,6 @@ public class Menu : MonoBehaviour
 
     public void OnPlayButton()
     {
-        SceneManager.LoadScene("Room");
+        SceneManager.LoadScene("Room 1");
     }
 }

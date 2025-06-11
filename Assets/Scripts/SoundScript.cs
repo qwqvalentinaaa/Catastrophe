@@ -49,7 +49,7 @@ public class SoundScript : MonoBehaviour
                 audioSource.Play();
                 alive = false;
                 gameMaster.Instance.score += dollarValue;
-                gameMaster.Instance.scoreText.text = "Damage Done: $" + gameMaster.Instance.score;
+                gameMaster.Instance.scoreText.text = "" + gameMaster.Instance.score;
                 Die();
             }
         }
@@ -63,7 +63,7 @@ public class SoundScript : MonoBehaviour
             audioSource.Play();
             alive = false;
             gameMaster.Instance.score += dollarValue;
-            gameMaster.Instance.scoreText.text = "Damage Done: $" + gameMaster.Instance.score;
+            gameMaster.Instance.scoreText.text = "" + gameMaster.Instance.score;
             Die();
         }
     }

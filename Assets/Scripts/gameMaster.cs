@@ -12,6 +12,7 @@ public class gameMaster : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public float score;
     public Button restartButton;
+    public GameObject win;
 
     // Objects
     public Transform destructibles;
@@ -35,13 +36,16 @@ public class gameMaster : MonoBehaviour
     void Start()
     {
         score = 0;
-        scoreText.text = "Damage Done: $" + score;
+        scoreText.text = "" + score;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (score >= 1000)
+        { 
+            win.SetActive(true);
+        }
     }
     public void Reset()
     {
@@ -61,7 +65,7 @@ public class gameMaster : MonoBehaviour
         player.position = new Vector3(-1, 0, 7);
         
         score = 0;
-        scoreText.text = "Damage Done: $" + score;
+        scoreText.text = "" + score;
     }
 }
  
