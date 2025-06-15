@@ -42,7 +42,7 @@ public class gameMaster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (score >= 1000)
+        if (score >= 1900)
         { 
             win.SetActive(true);
         }
@@ -58,8 +58,9 @@ public class gameMaster : MonoBehaviour
             if (objScript != null) { 
                 objScript.Reset();
             }
-
+            c.SetActive(true);
         }
+
         Rigidbody playerRB = player.GetComponent<Rigidbody>();
         playerRB.linearVelocity = new Vector3(0, 0, 0);
         player.position = new Vector3(-1, 0, 7);

@@ -24,8 +24,7 @@ public class Fish : MonoBehaviour
             Debug.Log("fish");
             audioSource.clip = eatSound;
             audioSource.Play();
-            Destroy(collision.gameObject);
-
+            collision.gameObject.SetActive(false);
         }
 
     }

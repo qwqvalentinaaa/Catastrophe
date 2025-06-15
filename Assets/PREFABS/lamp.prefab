@@ -158,7 +158,7 @@ MonoBehaviour:
   bumpSound: {fileID: 8300000, guid: 4f1748cb7f3d8b44f812eb6015bc2581, type: 3}
   breakSound: {fileID: 8300000, guid: 47d1c9f81e2dbf740ad0d17763918079, type: 3}
   dollarValue: 21
-  breakVelocity: 1.31
+  breakVelocity: 1.76
   pos: {x: 0, y: 0, z: 0}
   rot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!82 &7650211861124692502
